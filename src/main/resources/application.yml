@@ -1,0 +1,73 @@
+server:
+  port: 7000
+
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/staj
+    username: postgres
+    password: 12345678
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+       ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true   
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    data:
+      jdbc:
+        repositories:
+          enabled: false
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    protocol: smtp
+    username: efepatnos07@gmail.com
+    password: ptkhfwhczxuofkew
+    default-encoding: UTF-8
+    properties:
+      mail:
+        mime:
+          charset: UTF-8
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+          connectiontimeout: 10000
+          timeout: 10000
+          writetimeout: 10000
+
+    verify:
+      host: http://localhost:3000
+
+application:
+  security:
+    jwt:
+      secret-key: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
+      expiration: 1800000 #  86400000 ->1 gün # 30 dk ->1800000 1 dk -> 60000
+      refresh-token:
+        expiration: 604800000 # 7 days
+    #    cache:
+      #    use_query_cache: true
+        #  use_second_level_cache: true
+          #redisson:
+            #config: redisson.yaml
+          #region:
+            #factory_class: org.redisson.hibernate.RedissonRegionFactory
+
+
+
+
+
+
+            
+            
+            
