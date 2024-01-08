@@ -32,6 +32,7 @@ public class UserManager implements UserService {
 
 
 
+
     @Override
     public DataResult<?> findByEmail(String email) {
         return new DataResult<>(userRepository.findByEmail(email)
